@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Class representing a minimum heap data structure.
 class MinHeap
   def initialize
     @heap = []
@@ -14,7 +15,7 @@ class MinHeap
     heapify_up(last_ind)
   end
 
-  def get_min
+  def min
     return nil if @heap.empty?
 
     swap(0, last_ind)
@@ -48,12 +49,12 @@ class MinHeap
     heapify_down(smallest)
   end
 
-  def compare(i, j)
-    i < @heap.length && @heap[i] < @heap[j]
+  def compare(ind1, ind2)
+    ind1 < @heap.length && @heap[ind1] < @heap[ind2]
   end
 
-  def swap(i, j)
-    @heap[i], @heap[j] = @heap[j], @heap[i]
+  def swap(ind1, ind2)
+    @heap[ind1], @heap[ind2] = @heap[ind2], @heap[ind1]
   end
 
   def last_ind
